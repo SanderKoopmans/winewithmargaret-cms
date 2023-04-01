@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_settings_data_types",
+  "info": {
+    "displayName": "dataType",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "page",
+        "blog",
+        "recipe"
+      ]
+    }
+  }
+}
