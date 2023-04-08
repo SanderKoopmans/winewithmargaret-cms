@@ -19,6 +19,11 @@ provider "aws" {
   region = var.region
 }
 
+provider "aws" {
+  region = "us-east-1"
+  alias = "virginia"
+}
+
 # route 53
 resource "aws_route53_zone" "winewithmargaret_zone" {
   name = var.domain_name
@@ -41,6 +46,7 @@ resource "aws_route53_zone" "winewithmargaret_zone" {
 
 #  acm certificate
 resource "aws_acm_certificate" "winewithmargaret_cert" {
+  provider = aws.virginia
   domain_name               = var.domain_name
   subject_alternative_names = ["*.${var.domain_name}"]
   validation_method         = "DNS"
@@ -68,6 +74,9 @@ resource "aws_route53_record" "certvalidation" {
 }
 
 resource "aws_acm_certificate_validation" "certvalidation" {
+  depends_on = [
+    aws_acm_certificate.winewithmargaret_cert
+  ]
   certificate_arn         = aws_acm_certificate.winewithmargaret_cert.arn
   validation_record_fqdns = [for r in aws_route53_record.certvalidation : r.fqdn]
 }
@@ -209,7 +218,7 @@ resource "aws_cloudfront_distribution" "winewithmargaret_cms_dist" {
   restrictions {
     geo_restriction {
       restriction_type = "whitelist"
-      locations        = ["*"]
+      locations        = ["NL"]
     }
   }
   default_cache_behavior {
