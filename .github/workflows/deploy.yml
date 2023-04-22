@@ -44,6 +44,8 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
     - name: Install AWS CLI and run a command
+      env:
+        IMAGE_TAG: 1
       run: |
         echo "----Get aws cli----"
         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
