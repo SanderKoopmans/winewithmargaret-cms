@@ -1,0 +1,11 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "488836514851.dkr.ecr.eu-west-1.amazonaws.com/wwm-strapi-api:latest"
+    },
+    "Ports": [
+        {
+            "ContainerPort": 1337
+        }
+    ]
+}

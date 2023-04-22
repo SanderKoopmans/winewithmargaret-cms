@@ -1,0 +1,15 @@
+FROM --platform=linux/amd64 node:18
+
+WORKDIR /opt/
+
+COPY ./package.json ./
+COPY ./package-lock.json ./
+
+ENV NODE_ENV production
+RUN npm install
+
+COPY . .
+
+EXPOSE 1337
+
+CMD ["node", "node_modules/@strapi/strapi/bin/strapi", "start"]
