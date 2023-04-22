@@ -5,10 +5,11 @@ WORKDIR /opt/
 COPY ./package.json ./
 COPY ./package-lock.json ./
 
-RUN npm run build
 
 ENV NODE_ENV production
 RUN npm install
+
+RUN npm run build
 
 COPY . .
 
