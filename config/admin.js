@@ -8,7 +8,6 @@ module.exports = ({ env }) => ({
   // url: env.NODE_ENV === 'production' ? 'https://cms.winewithmargaret.com/' : '/',
   // url: '/',
   // serveAdminPanel: env.NODE_ENV === 'production' ? false : true,
-  serveAdminPanel: false,
 });
 
 // module.exports = ({ env }) => ({

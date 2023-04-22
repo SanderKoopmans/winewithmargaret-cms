@@ -1,9 +1,8 @@
 name: 🚀 Deploy
 on:
-  push:
-    branches:
-      - master
-  pull_request: {}
+  pull_request:
+    types:
+      - closed
 
 permissions:
   actions: write
@@ -14,6 +13,8 @@ defaults:
     shell: bash
 
 jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
   build:
     name: Build Image
     runs-on: ubuntu-latest
