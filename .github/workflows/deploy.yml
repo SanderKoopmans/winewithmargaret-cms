@@ -18,6 +18,7 @@ jobs:
   build:
     name: Build Image
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
 
     steps:
     - name: Check out code
