@@ -9,11 +9,6 @@ module.exports = ({ env }) => ({
       database: env("DATABASE_NAME", "strapi"),
       user: env("DATABASE_USERNAME", ""),
       password: env("DATABASE_PASSWORD", ""),
-      pool: {
-        min: 0,
-        max: 6,
-      },
-      acquireConnectionTimeout: 600000,
     },
     useNullAsDefault: true,
   },

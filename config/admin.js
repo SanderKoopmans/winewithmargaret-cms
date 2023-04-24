@@ -6,11 +6,7 @@ module.exports = ({ env }) => ({
     salt: env('API_TOKEN_SALT'),
   },
   // url: env.NODE_ENV === 'production' ? 'https://cms.winewithmargaret.com/' : '/',
-  // url: '/',
+  url: 'https://cms.winewithmargaret.com',
   // serveAdminPanel: env.NODE_ENV === 'production' ? false : true,
+  serveAdminPanel: false,
 });
-
-// module.exports = ({ env }) => ({
-//   url: '/', // Note: The administration will be accessible from the root of the domain (ex: http://yourfrontend.com/)
-//   serveAdminPanel: false, // http://yourbackend.com will not serve any static admin files
-// });
