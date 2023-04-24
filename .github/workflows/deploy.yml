@@ -1,9 +1,9 @@
 name: 🚀 Deploy
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - master
+  push:
+    branches:
+      - master
   pull_request: {}
 
 permissions:
@@ -18,7 +18,6 @@ jobs:
   build:
     name: Build Image
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
 
     steps:
     - name: Check out code
@@ -36,18 +35,20 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
 
     - name: Build, tag, and push image to Amazon ECR
+      if: github.ref == 'refs/heads/master'
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: wwm-strapi-api
-        IMAGE_TAG: 2
+        IMAGE_TAG: 3
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f Dockerfile.production .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
     - name: Install AWS CLI and run a command
+      if: github.ref == 'refs/heads/master'
       env:
-        IMAGE_TAG: 2
+        IMAGE_TAG: 3
       run: |
         echo "----Get aws cli----"
         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
