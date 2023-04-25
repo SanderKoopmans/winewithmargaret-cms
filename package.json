@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.6.2",
+    "@strapi/plugin-seo": "^1.8.0",
     "@strapi/plugin-users-permissions": "4.6.2",
     "@strapi/provider-upload-aws-s3": "^4.9.2",
     "@strapi/strapi": "4.6.2",
@@ -25,7 +26,7 @@
     "uuid": "11bb6d72-8cfb-40bd-b02a-f2375fb50495"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=14.19.1 <=16.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"

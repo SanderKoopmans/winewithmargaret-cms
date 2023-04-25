@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +24,16 @@
         "content.content",
         "content.header"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
+    },
+    "seo_social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.meta-social"
     }
   }
 }

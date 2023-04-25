@@ -116,6 +116,7 @@ dist
 build
 .strapi-updater.json
 data
+data.db
 
 ############################
 # Misc
