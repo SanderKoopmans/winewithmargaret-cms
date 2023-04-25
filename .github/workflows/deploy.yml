@@ -34,21 +34,30 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Autoincrement version
+      run: |
+        echo "NEW_PATCH_VERSION=$((${{ env.PATCH_VERSION }}+1))" >> $GITHUB_ENV
+
+    - name: Update GH version
+      uses: hmanzur/actions-set-secret@v2.0.0
+      with:
+        name: 'PATCH_VERSION'
+        value: ${{ env.NEW_PATCH_VERSION }}
+        repository: ${{ github.repository }}
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+
     - name: Build, tag, and push image to Amazon ECR
       if: github.ref == 'refs/heads/master'
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: wwm-strapi-api
-        IMAGE_TAG: 3
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f Dockerfile.production .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:${{ secrets.PATCH_VERSION }} -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f Dockerfile.production .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:${{ secrets.PATCH_VERSION }}
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
     - name: Install AWS CLI and run a command
       if: github.ref == 'refs/heads/master'
-      env:
-        IMAGE_TAG: 3
       run: |
         echo "----Get aws cli----"
         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -62,5 +71,5 @@ jobs:
         aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws configure set default.region ${{ secrets.AWS_REGION }}
-        aws elasticbeanstalk create-application-version --application-name wwm-strapi-cms --version-label $IMAGE_TAG --source-bundle S3Bucket=wwm-strapi-dockerrun,S3Key=Dockerrun.aws.json
-        aws elasticbeanstalk update-environment --application-name wwm-strapi-cms --environment-name wwm-strapi-env --version-label=$IMAGE_TAG
+        aws elasticbeanstalk create-application-version --application-name wwm-strapi-cms --version-label ${{ secrets.PATCH_VERSION }} --source-bundle S3Bucket=wwm-strapi-dockerrun,S3Key=Dockerrun.aws.json
+        aws elasticbeanstalk update-environment --application-name wwm-strapi-cms --environment-name wwm-strapi-env --version-label=${{ secrets.PATCH_VERSION }}

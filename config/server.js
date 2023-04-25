@@ -7,6 +7,4 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
-  url: 'https://sapi.winewithmargaret.com',
-  // url: env.NODE_ENV === 'production' ? 'https://api.winewithmargaret.com' : '/',
 });
