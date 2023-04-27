@@ -72,4 +72,4 @@ jobs:
         aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws configure set default.region ${{ secrets.AWS_REGION }}
         aws elasticbeanstalk create-application-version --application-name wwm-strapi-cms --version-label ${{ secrets.PATCH_VERSION }} --source-bundle S3Bucket=wwm-strapi-dockerrun,S3Key=Dockerrun.aws.json
-        aws elasticbeanstalk update-environment --application-name wwm-strapi-cms --environment-name wwm-strapi-env --version-label=${{ secrets.PATCH_VERSION }}
+        aws elasticbeanstalk update-environment --application-name wwm-strapi-cms --environment-name wwm-strapi-cms-elb-env --version-label=${{ secrets.PATCH_VERSION }}
