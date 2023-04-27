@@ -22,7 +22,9 @@
       "type": "dynamiczone",
       "components": [
         "content.content",
-        "content.header"
+        "content.header",
+        "content.spacer-32",
+        "content.spacer-64"
       ]
     },
     "seo": {
@@ -34,6 +36,15 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.meta-social"
+    },
+    "title": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "post"
     }
   }
 }
