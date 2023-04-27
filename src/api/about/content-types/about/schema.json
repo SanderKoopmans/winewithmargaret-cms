@@ -16,7 +16,9 @@
       "type": "dynamiczone",
       "components": [
         "content.content",
-        "content.header"
+        "content.header",
+        "content.spacer-32",
+        "content.spacer-64"
       ]
     },
     "pageType": {
