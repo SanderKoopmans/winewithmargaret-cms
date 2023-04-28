@@ -9,13 +9,10 @@ RUN touch .env
 
 ENV NODE_ENV=production
 
-RUN echo "Running with ENV $NODE_ENV"
-RUN npm install
-
-RUN npm run build
+RUN npm install --production
 
 COPY . .
 
 EXPOSE 1337
 
-CMD ["node", "node_modules/@strapi/strapi/bin/strapi", "start"]
+CMD ["npm", "run","start"]
