@@ -2,7 +2,7 @@ name: 🚢 Release
 on:
   push:
     tags:
-      - *
+      - "*"
 jobs:
   build:
     name: 📦 Build Image & Release
