@@ -1,6 +1,5 @@
 name: 🏷️ Create tag
 on:
-  workflow_dispatch: null
   push:
     branches:
       - master
