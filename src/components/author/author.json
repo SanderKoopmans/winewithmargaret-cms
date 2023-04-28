@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_author_authors",
+  "info": {
+    "displayName": "Author"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Intro": {
+      "type": "text"
+    },
+    "Picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Instagram": {
+      "type": "string"
+    },
+    "LinkedIn": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "Website": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    }
+  }
+}

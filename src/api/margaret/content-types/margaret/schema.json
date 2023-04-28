@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "margarets",
+  "info": {
+    "singularName": "margaret",
+    "pluralName": "margarets",
+    "displayName": "Margaret",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SEO_social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.meta-social"
+    },
+    "Content": {
+      "type": "dynamiczone",
+      "components": [
+        "content.content",
+        "content.header",
+        "content.spacer-32",
+        "content.spacer-64"
+      ]
+    },
+    "SEO_shared": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}
