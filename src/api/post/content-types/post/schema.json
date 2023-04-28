@@ -45,6 +45,10 @@
       "relation": "oneToMany",
       "target": "api::category.category",
       "mappedBy": "post"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
