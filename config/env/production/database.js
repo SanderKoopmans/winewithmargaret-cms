@@ -10,7 +10,6 @@ module.exports = ({ env }) => ({
       user: env("DATABASE_USERNAME"),
       password: env("DATABASE_PASSWORD"),
     },
-    useNullAsDefault: true,
   },
 });
 
