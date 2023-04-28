@@ -20,7 +20,6 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       - name: Build, tag, and push image to Amazon ECR
-        if: github.ref == 'refs/heads/master'
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: wwm-strapi-api
@@ -32,7 +31,6 @@ jobs:
 
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
       - name: Install AWS CLI and run a command
-        if: github.ref == 'refs/heads/master'
         run: >
           echo "----Get aws cli----"
 
