@@ -18,10 +18,10 @@
     "Introduction": {
       "type": "text"
     },
-    "Instagram": {
+    "InstagramName": {
       "type": "string"
     },
-    "LinkedIn": {
+    "LinkedInName": {
       "type": "string"
     },
     "Website": {
@@ -41,6 +41,12 @@
     "slug": {
       "type": "uid",
       "targetField": "Name"
+    },
+    "InstagramLink": {
+      "type": "string"
+    },
+    "LinkedInLink": {
+      "type": "string"
     }
   }
 }
