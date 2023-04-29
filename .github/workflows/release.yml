@@ -1,8 +1,6 @@
 name: 🚢 Release
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
 jobs:
   build:
     name: 📦 Build Image & Release

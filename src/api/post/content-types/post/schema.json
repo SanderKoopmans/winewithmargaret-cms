@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "pageType": {
-      "type": "dynamiczone",
-      "components": [
-        "page-settings.data-type"
-      ]
-    },
     "content": {
       "type": "dynamiczone",
       "components": [
@@ -26,16 +20,6 @@
         "content.spacer-32",
         "content.spacer-64"
       ]
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.seo"
-    },
-    "seo_social": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.meta-social"
     },
     "title": {
       "type": "string"
@@ -49,6 +33,21 @@
     "Slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "PageSettings": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-settings.data-type"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "SEO_social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.meta-social"
     }
   }
 }

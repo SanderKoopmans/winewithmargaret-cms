@@ -15,7 +15,8 @@ module.exports = createCoreController('api::post.post', ({ strapi }) => ({
             ...ctx.query,
         };
 
-        const { data, meta } = await super.find(ctx);
-        return { data, meta };
+        const { data } = await super.find(ctx);
+        const post = data[0] ? data[0] : 'Not found';
+        return { post };
     },
 }));
