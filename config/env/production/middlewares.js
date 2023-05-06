@@ -1,6 +1,5 @@
 module.exports = [
   'strapi::errors',
-  // 'strapi::security',
   {
     name: 'strapi::security',
     config: {
@@ -27,8 +26,15 @@ module.exports = [
       },
     },
   },
-  'strapi::cors',
   'strapi::poweredBy',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: ['https://cms.winewithmargaret.com']
+    }
+  },
   'strapi::logger',
   'strapi::query',
   'strapi::body',
