@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_settings_page_types",
+  "info": {
+    "displayName": "PageType"
+  },
+  "options": {},
+  "attributes": {
+    "PageType": {
+      "type": "enumeration",
+      "enum": [
+        "Article",
+        "Recipe"
+      ],
+      "required": true,
+      "default": "Article"
+    }
+  }
+}

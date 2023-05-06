@@ -5,24 +5,5 @@
     "description": ""
   },
   "options": {},
-  "attributes": {
-    "content": {
-      "type": "richtext"
-    },
-    "Hero": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.header"
-    },
-    "Spacer_32": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.spacer-32"
-    },
-    "Spacer_64": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.spacer-64"
-    }
-  }
+  "attributes": {}
 }
