@@ -21,24 +21,6 @@
         "content.spacer-64"
       ]
     },
-    "title": {
-      "type": "string"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "post"
-    },
-    "Slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "PageSettings": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page-settings.data-type"
-    },
     "SEO": {
       "type": "component",
       "repeatable": false,
@@ -48,6 +30,35 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.meta-social"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Excerpt": {
+      "type": "text"
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "PageType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-settings.page-type"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "post"
     }
   }
 }
