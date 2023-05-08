@@ -31,17 +31,16 @@
       "repeatable": true,
       "component": "shared.meta-social"
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Slug": {
-      "type": "uid",
-      "targetField": "Title"
+    "slug": {
+      "type": "uid"
     },
-    "Excerpt": {
+    "excerpt": {
       "type": "text"
     },
-    "Thumbnail": {
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -49,7 +48,7 @@
         "images"
       ]
     },
-    "PageType": {
+    "pageType": {
       "type": "component",
       "repeatable": false,
       "component": "page-settings.page-type"

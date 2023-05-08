@@ -1,11 +1,12 @@
 {
   "collectionName": "components_page_settings_page_types",
   "info": {
-    "displayName": "PageType"
+    "displayName": "pageType",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "PageType": {
+    "pageType": {
       "type": "enumeration",
       "enum": [
         "Article",

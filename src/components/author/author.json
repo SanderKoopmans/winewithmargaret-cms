@@ -1,39 +1,41 @@
 {
   "collectionName": "components_author_authors",
   "info": {
-    "displayName": "Author"
+    "displayName": "author",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Intro": {
+    "intro": {
       "type": "text"
     },
-    "Picture": {
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "Instagram": {
+    "instagram": {
       "type": "string"
     },
-    "LinkedIn": {
+    "linkedIn": {
       "type": "string"
     },
-    "Email": {
+    "email": {
       "type": "string"
     },
-    "Website": {
+    "website": {
       "type": "string"
     },
-    "Location": {
+    "location": {
       "type": "string"
     }
   }
