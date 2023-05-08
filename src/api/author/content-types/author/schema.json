@@ -12,25 +12,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Introduction": {
+    "introduction": {
       "type": "text"
     },
-    "InstagramName": {
+    "instagramName": {
       "type": "string"
     },
-    "LinkedInName": {
+    "linkedInName": {
       "type": "string"
     },
-    "Website": {
+    "website": {
       "type": "string"
     },
-    "Email": {
+    "email": {
       "type": "string"
     },
-    "Picture": {
+    "picture": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -39,13 +39,12 @@
       ]
     },
     "slug": {
-      "type": "uid",
-      "targetField": "Name"
+      "type": "uid"
     },
-    "InstagramLink": {
+    "instagramLink": {
       "type": "string"
     },
-    "LinkedInLink": {
+    "linkedInLink": {
       "type": "string"
     }
   }
