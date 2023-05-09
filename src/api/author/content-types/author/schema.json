@@ -39,7 +39,8 @@
       ]
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "name"
     },
     "instagramLink": {
       "type": "string"

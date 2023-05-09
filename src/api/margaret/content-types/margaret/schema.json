@@ -17,7 +17,7 @@
       "repeatable": true,
       "component": "shared.meta-social"
     },
-    "Content": {
+    "content": {
       "type": "dynamiczone",
       "components": [
         "content.content",
