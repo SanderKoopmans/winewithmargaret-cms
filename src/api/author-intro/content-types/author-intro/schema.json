@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "author_intros",
+  "info": {
+    "singularName": "author-intro",
+    "pluralName": "author-intros",
+    "displayName": "authorIntro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "text"
+    }
+  }
+}
