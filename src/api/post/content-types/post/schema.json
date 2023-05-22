@@ -8,7 +8,8 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "populateCreatorFields": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -18,7 +19,9 @@
         "content.content",
         "content.header",
         "content.spacer-32",
-        "content.spacer-64"
+        "content.spacer-64",
+        "content.image-slider",
+        "content.media-and-text"
       ]
     },
     "SEO": {

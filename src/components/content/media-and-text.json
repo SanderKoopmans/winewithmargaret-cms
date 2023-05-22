@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_content_media_and_texts",
+  "info": {
+    "displayName": "mediaAndText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.content",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "textRight": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
