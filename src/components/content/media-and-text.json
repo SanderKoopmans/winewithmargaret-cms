@@ -6,12 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "component",
-      "repeatable": false,
-      "component": "content.content",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -23,6 +17,11 @@
     "textRight": {
       "type": "boolean",
       "default": false
+    },
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.content"
     }
   }
 }
