@@ -1,6 +1,23 @@
-FROM --platform=linux/amd64 node:16-alpine as base
+# FROM --platform=linux/amd64 node:16
 
-FROM base as build
+# WORKDIR /opt/
+
+# COPY ./package.json ./
+# COPY ./package-lock.json ./
+
+# RUN touch .env
+
+# ENV NODE_ENV=production
+
+# RUN npm install --production
+
+# COPY . .
+
+# EXPOSE 1337
+
+# CMD ["npm", "run","start"]
+
+FROM --platform=linux/amd64 node:16-alpine as build
 # Installing libvips-dev for sharp Compatability
 RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev > /dev/null 2>&1
 ARG NODE_ENV=production
@@ -11,9 +28,9 @@ ENV PATH /opt/node_modules/.bin:$PATH
 RUN npm install --production
 WORKDIR /opt/app
 COPY ./ .
-# RUN npm run build
+RUN npm run build
 
-FROM base as final
+FROM --platform=linux/amd64 node:16-alpine
 # Installing libvips-dev for sharp Compatability
 RUN apk add --no-cache vips-dev
 ARG NODE_ENV=production
